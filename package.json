@@ -18,10 +18,12 @@
   },
   "homepage": "https://github.com/DangTrungdev113999/practice-passport-socket#readme",
   "dependencies": {
+    "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
+    "mongoose": "^5.7.6",
     "passport": "^0.4.0",
     "pug": "^2.0.4"
   },
