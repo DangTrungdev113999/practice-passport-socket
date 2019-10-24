@@ -1,0 +1,36 @@
+.login-by-Oauth2 {
+  text-align: center;
+}
+
+.btn-login-facebook, .btn-login-google {
+  padding: 10px 50px;
+  border-radius: 10px;
+  margin: 0 5px;
+  display: inline-block;
+}
+
+.btn-login-facebook {
+  background: #3742fa;
+  border: 2px solid #3742fa;
+  color: white;
+}
+
+.btn-login-facebook:hover {
+  color: #3742fa;
+  background: white;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.14);
+  transition: all 0.25s;
+}
+
+.btn-login-google {
+  background: #c0392b;
+  border: 2px solid #c0392b;
+  color: white;
+}
+
+.btn-login-google:hover {
+  color: #c0392b;
+  background: white;
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.14);
+  transition: all 0.25s;
+}
