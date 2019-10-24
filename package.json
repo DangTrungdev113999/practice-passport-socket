@@ -1,0 +1,34 @@
+{
+  "name": "practice-passport-socket",
+  "version": "1.0.0",
+  "description": "pactice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node --inspect src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DangTrungdev113999/practice-passport-socket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DangTrungdev113999/practice-passport-socket/issues"
+  },
+  "homepage": "https://github.com/DangTrungdev113999/practice-passport-socket#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "passport": "^0.4.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3"
+  }
+}
