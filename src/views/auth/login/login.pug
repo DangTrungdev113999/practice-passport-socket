@@ -1,0 +1,19 @@
+#login
+    form.form
+      p.fieldset
+        label.image-replace.email(for='signin-email') E-mail
+        input#signin-email.full-width.has-padding.has-border(type='email' placeholder='E-mail')
+        span.error-message An account with this email address does not exist!
+      p.fieldset
+        label.image-replace.password(for='signin-password') Password
+        input#signin-password.full-width.has-padding.has-border(type='password' placeholder='Password')
+        a.hide-password(href='#0') Show
+        span.error-message Wrong password! Try again.
+      p.fieldset
+        input#remember-me(type='checkbox' checked='')
+        label(for='remember-me') Remember me
+      p.fieldset
+        input.full-width(type='submit' value='Login')
+    p.form-bottom-message
+      a(href='#0') Forgot your password?
+    // <a href="#0" class="close-form">Close</a>

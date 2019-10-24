@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
+  link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css")
+  link(rel="stylesheet" href="/css/auth.css")
+  link(rel="stylesheet" href="/css/style.css")
+title Title
+
+nav.main-nav
+  ul
+    li
+      a.signin(href='#0') Sign in
+    li
+      a.signup(href='#0') Sign up
+.user-modal
+  .user-modal-container
+    ul.switcher
+      li
+        a(href='#0') Sign in
+      li
+        a(href='#0') New account
+    include ./alert/alert
+    div.login-by-Oauth2
+      a.btn.btn-login-facebook(href="/auth/facebook") 
+        i.fab.fa-facebook-f
+      a.btn.btn-login-google(href="/auth/google")
+        i.fab.fa-google
+    include ./login/login
+    include ./register/register
+    include ./reset-password/reset-password
+    a.close-form(href='#0') Close
+
+
+
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
+
+script(src='/js/auth.js')
+script(src='/js/main.js')

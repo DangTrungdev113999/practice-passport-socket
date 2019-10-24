@@ -1,4 +1,5 @@
 import express  from  'express';
+import path from "path";
 
 import connectDB from "./config/connectDB";
 import configViewEngine from "./config/viewEngine";
@@ -10,7 +11,9 @@ connectDB();
 configViewEngine(app);
 
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/', (req, res) => {
+  res.render("auth/master");
+});
 
 app.listen(process.env.APP_PORT, () => {
   console.log(`running on ${process.env.APP_PORT}: ${process.env.APP_HOST}`)
