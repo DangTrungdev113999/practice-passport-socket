@@ -1,5 +1,6 @@
 import express  from  'express';
-import path from "path";
+import connectFlash from "connect-flash";
+import cookieParser  from  "cookie-parser";
 
 import connectDB from "./config/connectDB";
 import configViewEngine from "./config/viewEngine";
@@ -10,9 +11,13 @@ connectDB();
 
 configViewEngine(app);
 
+app.use(connectFlash());
+
+app.use(cookieParser());
+
 
 app.get('/', (req, res) => {
-  res.render("auth/master");
+  res.render("auth/master", { errors:  req.flash("errors"), success: req.flash("success") });
 });
 
 app.listen(process.env.APP_PORT, () => {
