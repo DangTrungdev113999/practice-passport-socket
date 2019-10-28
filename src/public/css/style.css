@@ -16,8 +16,7 @@
 }
 
 .btn-login-facebook:hover {
-  color: #3742fa;
-  background: white;
+  color: white; 
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.14);
   transition: all 0.25s;
 }
@@ -29,8 +28,7 @@
 }
 
 .btn-login-google:hover {
-  color: #c0392b;
-  background: white;
+  color: white;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.14);
   transition: all 0.25s;
 }

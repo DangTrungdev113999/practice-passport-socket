@@ -40,10 +40,6 @@ body {
     border-radius: 30px;
     line-height: 45px;
     color: #FFF;
-    -webkit-transition: all 0.30s ease-in-out;
-        -moz-transition: all 0.30s ease-in-out;
-        -ms-transition: all 0.30s ease-in-out;
-        -o-transition: all 0.30s ease-in-out;
 }
 
 .main-nav li:nth-child(1) a {
@@ -246,10 +242,6 @@ body {
     -ms-appearance: none;
     -o-appearance: none;
     appearance: none;
-    -webkit-transition: all 0.30s ease-in-out;
-        -moz-transition: all 0.30s ease-in-out;
-        -ms-transition: all 0.30s ease-in-out;
-        -o-transition: all 0.30s ease-in-out;
 }
 .form input[type=submit]:hover {
     background: #d83d3d;
@@ -364,10 +356,6 @@ body {
     text-decoration: none;
     border-bottom: 1px solid rgba(255, 255, 255, .0);
     padding: 0 0 0 2px;
-    -webkit-transition: all 0.30s ease-in-out;
-        -moz-transition: all 0.30s ease-in-out;
-        -ms-transition: all 0.30s ease-in-out;
-        -o-transition: all 0.30s ease-in-out;
 }
 .form-bottom-message a:hover {
     animation: borderslide-3px .5s;
