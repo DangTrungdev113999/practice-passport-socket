@@ -1,21 +1,21 @@
 #signup
-    form.form
+    form.form(method="post"  html="{:multipart=>true}" data-remote="true" action="/register")
       p.fieldset
         label.image-replace.username(for='signup-username') Username
-        input#signup-username.full-width.has-padding.has-border(type='text' placeholder='Username')
+        input#signup-username.full-width.has-padding.has-border(type='text' placeholder='Username' name="username")
         span.error-message Your username can only contain numeric and alphabetic symbols!
       p.fieldset
         label.image-replace.email(for='signup-email') E-mail
-        input#signup-email.full-width.has-padding.has-border(type='email' placeholder='E-mail')
+        input#signup-email.full-width.has-padding.has-border(type='text' placeholder='E-mail' name="email")
         span.error-message Enter a valid email address!
       p.fieldset
         label.image-replace.password(for='signup-password') Password
-        input#signup-password.full-width.has-padding.has-border(type='password' placeholder='Password')
+        input#signup-password.full-width.has-padding.has-border(type='password' placeholder='Password' name="password" value="Aa@123456")
         a.hide-password(href='#0') Show
         span.error-message Your password has to be at least 6 characters long!
       p.fieldset
-        label.image-replace.password(for='signup-password') Repeat password
-        input#signup-password.full-width.has-padding.has-border(type='password' placeholder='Repeat password')
+        label.image-replace.password(for='signu-prepeat-password') Repeat password
+        input#signu-prepeat-password.full-width.has-padding.has-border(type='password' placeholder='Repeat password' name="repeat_password" value="Aa@123456")
         a.hide-password(href='#0') Show
         span.error-message Your password has to be at least 6 characters long!
       p.fieldset
