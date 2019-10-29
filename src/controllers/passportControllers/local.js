@@ -44,7 +44,7 @@ let initPassportLocal = () => {
           return done(
             null,
             user,
-            // req.flash("success", "hehe")
+            req.flash("success", transSuccess.login_success(user.username))
           )
         } catch (error) {
           console.log(error);

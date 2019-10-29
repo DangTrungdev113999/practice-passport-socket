@@ -16,7 +16,10 @@ initPassportGoogle();
 let initRoutes = app => {
 
   router.get("/test", (req, res) => {
-    res.render("test")
+    res.render("test", {
+      success: req.flash("success"),
+      errors: req.flash("errors")
+    })
   })
 
   router.get("/login-register", auth.index);
@@ -37,7 +40,20 @@ let initRoutes = app => {
     })
   )
 
-  
+  router.get(
+    "/auth/facebook",
+    passport.authenticate("facebook", { scope:  ["email"] })
+  )
+
+  router.get(
+    "/auth/facebook/callback",
+    passport.authenticate("facebook", {
+      successRedirect: "/test",
+      failureRedirect: "/login-register",
+    })
+  )
+
+
 
   return app.use("/", router);
 };
