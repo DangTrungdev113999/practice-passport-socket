@@ -6,147 +6,114 @@ head
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css")
+  link(rel="stylesheet" href="/css/chat.css")
 
-.container.clearfix
-  #people-list.people-list
-    .search
-      input(type='text' placeholder='search')
-      i.fa.fa-search
-    ul.list
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg' alt='avatar')
-        .about
-          .name Vincent Porter
-          .status
-            i.fa.fa-circle.online
-            |  online
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_02.jpg' alt='avatar')
-        .about
-          .name Aiden Chavez
-          .status
-            i.fa.fa-circle.offline
-            |  left 7 mins ago
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_03.jpg' alt='avatar')
-        .about
-          .name Mike Thomas
-          .status
-            i.fa.fa-circle.online
-            |  online
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_04.jpg' alt='avatar')
-        .about
-          .name Erica Hughes
-          .status
-            i.fa.fa-circle.online
-            |  online
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_05.jpg' alt='avatar')
-        .about
-          .name Ginger Johnston
-          .status
-            i.fa.fa-circle.online
-            |  online
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_06.jpg' alt='avatar')
-        .about
-          .name Tracy Carpenter
-          .status
-            i.fa.fa-circle.offline
-            |  left 30 mins ago
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_07.jpg' alt='avatar')
-        .about
-          .name Christian Kelly
-          .status
-            i.fa.fa-circle.offline
-            |  left 10 hours ago
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_08.jpg' alt='avatar')
-        .about
-          .name Monica Ward
-          .status
-            i.fa.fa-circle.online
-            |  online
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_09.jpg' alt='avatar')
-        .about
-          .name Dean Henry
-          .status
-            i.fa.fa-circle.offline
-            |  offline since Oct 28
-      li.clearfix
-        img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_10.jpg' alt='avatar')
-        .about
-          .name Peyton Mckinney
-          .status
-            i.fa.fa-circle.online
-            |  online
-  .chat
-    .chat-header.clearfix
-      img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg' alt='avatar')
-      .chat-about
-        .chat-with Chat with Vincent Porter
-        .chat-num-messages already 1 902 messages
-      i.fa.fa-star
-    // end chat-header
-    .chat-history
-      ul
-        li.clearfix
-          .message-data.align-right
-            span.message-data-time 10:10 AM, Today
-            span.message-data-name Olia
-            i.fa.fa-circle.me
-          .message.other-message.float-right
-            | Hi Vincent, how are you? How is the project coming along?
-        li
-          .message-data
-            span.message-data-name
-              i.fa.fa-circle.online
-              |  Vincent
-            span.message-data-time 10:12 AM, Today
-          .message.my-message
-            | Are we meeting today? Project has been already finished and I have results to show you.
-        li.clearfix
-          .message-data.align-right
-            span.message-data-time 10:14 AM, Today
-            span.message-data-name Olia
-            i.fa.fa-circle.me
-          .message.other-message.float-right
-            | Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so? Have you faced any problems at the last phase of the project?
-        li
-          .message-data
-            span.message-data-name
-              i.fa.fa-circle.online
-              |  Vincent
-            span.message-data-time 10:20 AM, Today
-          .message.my-message
-            | Actually everything was fine. I&apos;m very excited to show this to our team.
-        li
-          .message-data
-            span.message-data-name
-              i.fa.fa-circle.online
-              |  Vincent
-            span.message-data-time 10:31 AM, Today
-          i.fa.fa-circle.online
-          i.fa.fa-circle.online(style='color: #AED2A6')
-          i.fa.fa-circle.online(style='color:#DAE9DA')
-    // end chat-history
-    .chat-message.clearfix
-      textarea#message-to-send(name='message-to-send' placeholder='Type your message' rows='3')
-      i.fa.fa-file-o
-      i.fa.fa-file-image-o
-      button Send
-    // end chat-message
-  // end chat
-// end container
+nav.navbar.navbar-expand-lg.navbar-light.my-navbar
+  a.navbar-brand.text-white.text-uppercase(href='#') Socket
+  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        a.nav-link.text-white(href='#')
+          | Home 
+          span.sr-only (current)
+      li.nav-item
+        a.nav-link.text-white(href='#') Link
+      li.nav-item
+        a.nav-link.text-white.disabled(href='#') Disabled
+    ul.navbar-nav.ml-auto
+      li.nav-item.dropdown
+        a#setting.nav-link.dropdown-toggle.text-white(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          | Setting
+        .dropdown-menu(aria-labelledby='setting')
+          a.dropdown-item(href='#') Logout
+          .dropdown-divider
+
+
+.row.mt-3
+  .col-md-8
+    .container.clearfix
+      .row
+        .col-md-4
+          #people-list.people-list
+            .search
+              input(type='text' placeholder='search')
+              i.fa.fa-search
+            ul.list
+              li.clearfix
+                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg' alt='avatar')
+                .about
+                  .name Vincent Porter
+                  .status
+                    i.fa.fa-circle.online
+                    |  online
+        .col-md-8.no-padding 
+          .chat
+            .chat-header.clearfix
+              img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg' alt='avatar')
+              .chat-about
+                .chat-with Chat with Vincent Porter
+                .chat-num-messages already 1 902 messages
+              i.fa.fa-star
+            // end chat-header
+            .chat-history
+              ul
+                li.clearfix
+                  .message-data.align-right
+                    span.message-data-time 10:10 AM, Today
+                    span.message-data-name Olia
+                    i.fa.fa-circle.me
+                  .message.other-message.float-right
+                    | Hi Vincent, how are you? How is the project coming along?
+                li
+                  .message-data
+                    span.message-data-name
+                      i.fa.fa-circle.online
+                      |  Vincent
+                    span.message-data-time 10:12 AM, Today
+                  .message.my-message
+                    | Are we meeting today? Project has been already finished and I have results to show you.
+            // end chat-history
+            .chat-message.clearfix
+              textarea#message-to-send(name='message-to-send' placeholder='Type your message' rows='3')
+              i.fa.fa-file-o
+              i.fa.fa-file-image-o
+              button Send
+            // end chat-message
+          // end chat
+        // end container
+
+  .col-md-4
+    .container.clearfix
+      .row
+        .col-md-12
+          h1
+            span.badge.badge-warning Add friend
+          .row.mt-1
+            .col-md-2
+              .user.text-center
+                img.rounded-circle(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar")
+                a.btn(href="")
+                  span.badge.badge-danger name
+
+        .col-md-12.mt-5
+          h1
+            span.badge.badge-primary Friend List
+          .row.mt-1
+            .col-md-2
+              .user.text-center
+                img.rounded-circle(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar")
+                a.btn(href="")
+                  span.badge.badge-success name
+
+
+
 
 
 script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
-script(src='/js/main.js')
 script#message-template(type='text/x-handlebars-template').
   <li class="clearfix">
   <div class="message-data align-right">
@@ -167,3 +134,5 @@ script#message-response-template(type='text/x-handlebars-template').
   {{response}}
   </div>
   </li>
+script(src='/js/main.js')
+script(src='/js/chat.js')

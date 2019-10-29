@@ -16,7 +16,7 @@ initPassportGoogle();
 let initRoutes = app => {
 
   router.get("/test", auth.checkLogin, (req, res) => {
-    res.render("test", {
+    res.render("main/master", {
       success: req.flash("success"),
       errors: req.flash("errors")
     })
