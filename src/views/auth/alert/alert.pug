@@ -1,4 +1,15 @@
-.alert.alert-success.mt-3(role='alert')
-  | A simple primary alert&mdash;check it out!
-.alert.alert-danger.mt-3(role='alert')
-  | A simple secondary alert&mdash;check it out!
+if success.length
+  script.
+    $(document).ready(function() {
+      showsigninModal();
+    })
+  each val in success
+    .alert.alert-success.mt-1(role='alert')=val
+
+if errors.length
+  script.
+    $(document).ready(function() {
+      showSignupModal();
+    })
+  each val in errors
+    .alert.alert-danger.mt-1(role='alert')=val

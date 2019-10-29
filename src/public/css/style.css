@@ -3,7 +3,7 @@
 }
 
 .btn-login-facebook, .btn-login-google {
-  padding: 10px 50px;
+  padding: 10px 100px;
   border-radius: 10px;
   margin: 0 5px;
   display: inline-block;
@@ -22,8 +22,8 @@
 }
 
 .btn-login-google {
-  background: #c0392b;
-  border: 2px solid #c0392b;
+  background: #eb2f06;
+  border: 2px solid #eb2f06;
   color: white;
 }
 

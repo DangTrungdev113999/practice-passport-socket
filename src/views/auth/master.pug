@@ -8,6 +8,14 @@ head
   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css")
   link(rel="stylesheet" href="/css/auth.css")
   link(rel="stylesheet" href="/css/style.css")
+
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
+
+  script(src='/js/auth.js')
+  script(src='/js/main.js')
 title Title
 
 nav.main-nav
@@ -24,7 +32,7 @@ nav.main-nav
       li
         a(href='#0') New account
     include ./alert/alert
-    div.login-by-Oauth2
+    div.login-by-Oauth2.mt-3
       a.btn.btn-login-facebook(href="/auth/facebook") 
         i.fab.fa-facebook-f
       a.btn.btn-login-google(href="/auth/google")
@@ -36,9 +44,4 @@ nav.main-nav
 
 
 
-script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js')
-script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
 
-script(src='/js/auth.js')
-script(src='/js/main.js')
