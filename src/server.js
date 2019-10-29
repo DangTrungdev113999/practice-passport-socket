@@ -11,56 +11,56 @@ import session from "./config/session";
 
 const app = express();
 
-// connectDB();
+connectDB();
 
-// session.config(app);
-
-
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json());
-
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.use(connectFlash());
-
-// app.use(cookieParser());
-
-// configViewEngine(app);
-
-// initRouter(app);
-
-// app.listen(process.env.APP_PORT, () => {
-//   console.log(`running on ${process.env.APP_PORT}: ${process.env.APP_HOST}`)
-// });
-
-import pem from "pem";
-import https from "https";
-pem.createCertificate({ days: 1, selfSigned: true }, function (err, keys) {
-  if (err) {
-    throw err
-  }
-
-  connectDB();
-
-  session.config(app);
+session.config(app);
 
 
-  app.use(bodyParser.urlencoded({ extended: false }))
-  app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
 
-  app.use(passport.initialize());
-  app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
-  app.use(connectFlash());
+app.use(connectFlash());
 
-  app.use(cookieParser());
+app.use(cookieParser());
 
-  configViewEngine(app);
+configViewEngine(app);
 
-  initRouter(app);
+initRouter(app);
+
+app.listen(process.env.APP_PORT, () => {
+  console.log(`running on ${process.env.APP_PORT}: ${process.env.APP_HOST}`)
+});
+
+// import pem from "pem";
+// import https from "https";
+// pem.createCertificate({ days: 1, selfSigned: true }, function (err, keys) {
+//   if (err) {
+//     throw err
+//   }
+
+//   connectDB();
+
+//   session.config(app);
+
+
+//   app.use(bodyParser.urlencoded({ extended: false }))
+//   app.use(bodyParser.json());
+
+//   app.use(passport.initialize());
+//   app.use(passport.session());
+
+//   app.use(connectFlash());
+
+//   app.use(cookieParser());
+
+//   configViewEngine(app);
+
+//   initRouter(app);
  
-  https.createServer({ key: keys.serviceKey, cert: keys.certificate }, app).listen(process.env.APP_PORT, () => {
-    console.log(`running on ${process.env.APP_PORT}: ${process.env.APP_HOST}`)
-  });
-})
+//   https.createServer({ key: keys.serviceKey, cert: keys.certificate }, app).listen(process.env.APP_PORT, () => {
+//     console.log(`running on ${process.env.APP_PORT}: ${process.env.APP_HOST}`)
+//   });
+// })
