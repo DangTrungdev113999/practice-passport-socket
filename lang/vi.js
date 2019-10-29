@@ -10,7 +10,8 @@ export const transSuccess = {
   register_success : "sign up success, please login !",
   login_success: (username) => {
     return `welcame to ${username}, have a nice day !`
-  }
+  },
+  logout_success: "logout success, see you again !"
 }
 
 export const transErrors = {
