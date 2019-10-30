@@ -6,83 +6,34 @@ head
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css')
   link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css")
+
+  link(rel='stylesheet' href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/alertify.min.css')
+  // Default theme
+  link(rel='stylesheet' href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/themes/default.min.css')
+  // Semantic UI theme
+  link(rel='stylesheet' href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/themes/semantic.min.css')
+  // Bootstrap theme
+  link(rel='stylesheet' href='//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/css/themes/bootstrap.min.css')
+
+  
   link(rel="stylesheet" href="/css/chat.css")
 
-nav.navbar.navbar-expand-lg.navbar-light.my-navbar
-  a.navbar-brand.text-white.text-uppercase(href='#') Socket
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
-      li.nav-item.active
-        a.nav-link.text-white(href='#')
-          | Home 
-          span.sr-only (current)
-      li.nav-item
-        a.nav-link.text-white(href='#') Link
-      li.nav-item
-        a.nav-link.text-white.disabled(href='#') Disabled
-    ul.navbar-nav.ml-auto
-      li.nav-item.dropdown
-        a#setting.nav-link.dropdown-toggle.text-white(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-          | Setting
-        .dropdown-menu(aria-labelledby='setting')
-          a.dropdown-item(href='#') Logout
-          .dropdown-divider
 
+ 
+
+include ./navbar/navbar
 
 .row.mt-3
   .col-md-8
     .container.clearfix
       .row
         .col-md-4
-          #people-list.people-list
-            .search
-              input(type='text' placeholder='search')
-              i.fa.fa-search
-            ul.list
-              li.clearfix
-                img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg' alt='avatar')
-                .about
-                  .name Vincent Porter
-                  .status
-                    i.fa.fa-circle.online
-                    |  online
+          include ./peapleList/peapleList
+
         .col-md-8.no-padding 
-          .chat
-            .chat-header.clearfix
-              img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg' alt='avatar')
-              .chat-about
-                .chat-with Chat with Vincent Porter
-                .chat-num-messages already 1 902 messages
-              i.fa.fa-star
-            // end chat-header
-            .chat-history
-              ul
-                li.clearfix
-                  .message-data.align-right
-                    span.message-data-time 10:10 AM, Today
-                    span.message-data-name Olia
-                    i.fa.fa-circle.me
-                  .message.other-message.float-right
-                    | Hi Vincent, how are you? How is the project coming along?
-                li
-                  .message-data
-                    span.message-data-name
-                      i.fa.fa-circle.online
-                      |  Vincent
-                    span.message-data-time 10:12 AM, Today
-                  .message.my-message
-                    | Are we meeting today? Project has been already finished and I have results to show you.
-            // end chat-history
-            .chat-message.clearfix
-              textarea#message-to-send(name='message-to-send' placeholder='Type your message' rows='3')
-              i.fa.fa-file-o
-              i.fa.fa-file-image-o
-              button Send
-            // end chat-message
-          // end chat
-        // end container
+          include ./chat/chatTabs
+
+          
 
   .col-md-4
     .container.clearfix
@@ -91,48 +42,20 @@ nav.navbar.navbar-expand-lg.navbar-light.my-navbar
           h1
             span.badge.badge-warning Add friend
           .row.mt-1
-            .col-md-2
-              .user.text-center
-                img.rounded-circle(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar")
-                a.btn(href="")
-                  span.badge.badge-danger name
+            include ./addFriend/addFriend
 
         .col-md-12.mt-5
           h1
             span.badge.badge-primary Friend List
-          .row.mt-1
-            .col-md-2
-              .user.text-center
-                img.rounded-circle(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar")
-                a.btn(href="")
-                  span.badge.badge-success name
+          .row.mt-1.friend-list
+            include ./friendList/friendList
 
-
-
-
-
-script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js')
 script(src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js')
-script#message-template(type='text/x-handlebars-template').
-  <li class="clearfix">
-  <div class="message-data align-right">
-  <span class="message-data-time" >{{time}}, Today</span> &nbsp; &nbsp;
-  <span class="message-data-name" >Olia</span> <i class="fa fa-circle me"></i>
-  </div>
-  <div class="message other-message float-right">
-  {{messageOutput}}
-  </div>
-  </li>
-script#message-response-template(type='text/x-handlebars-template').
-  <li>
-  <div class="message-data">
-  <span class="message-data-name"><i class="fa fa-circle online"></i> Vincent</span>
-  <span class="message-data-time">{{time}}, Today</span>
-  </div>
-  <div class="message my-message">
-  {{response}}
-  </div>
-  </li>
+script(src="//cdn.jsdelivr.net/npm/alertifyjs@1.12.0/build/alertify.min.js")
+
+
 script(src='/js/main.js')
 script(src='/js/chat.js')
+script(src="/js/addFriend.js")

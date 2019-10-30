@@ -1,0 +1,8 @@
+if allUserToAdd.length
+  each user in allUserToAdd
+    .col-md-3(data-uid=`to_${user._id}`)
+      .user.text-center
+        img.rounded-circle(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01_green.jpg" alt="avatar")
+        br
+        a.add-friend.btn(href="javascript:void(0)" data-uid=`${user._id}`)
+          span.badge.badge-danger=user.username

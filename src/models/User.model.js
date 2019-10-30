@@ -41,9 +41,20 @@ UserSchema.statics = {
   findByIdForSessionToUse(id) {
     return this.findById(id).exec();
   },
+  findUserById(id) {
+    return this.findById(id, {"local.password": 0}).exec();
+  },
   findUserByFacebookId(id) {
     return this.findOne({ "facebook.uid": id }).exec();
   },
+  getAllUser() {
+    return this.find({}, {"local.password": 0}).exec();
+  },
+  findUserToAdd(id) {
+    return this.find({
+      _id: { $nin: id }
+    }, {"local.password": 0}).exec();
+  }
 }
 
 UserSchema.methods = {
