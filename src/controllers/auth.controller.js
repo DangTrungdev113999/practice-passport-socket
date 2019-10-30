@@ -58,7 +58,7 @@ let checkLogin = (req, res, next) => {
 
 let checkLogout = (req, res, next) => {
   if (req.isAuthenticated()) {
-    return res.redirect("/test");
+    return res.redirect("/");
   }
   return next();
 }

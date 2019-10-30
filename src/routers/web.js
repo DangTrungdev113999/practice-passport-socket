@@ -1,7 +1,7 @@
 import express from "express";
 import passport from "passport";
 
-import { auth } from "./../controllers/index";
+import { auth, home, contact } from "./../controllers/index";
 import { authValid } from "./../validation/index";
 import initPassportLocal from "./../controllers/passportControllers/local";
 import initPassportFacebook from "./../controllers/passportControllers/facebook";
@@ -14,13 +14,6 @@ initPassportFacebook();
 initPassportGoogle();
 
 let initRoutes = app => {
-
-  router.get("/test", auth.checkLogin, (req, res) => {
-    res.render("main/master", {
-      success: req.flash("success"),
-      errors: req.flash("errors")
-    })
-  });
 
   router.get("/login-register", auth.checkLogout, auth.index);
 
@@ -37,7 +30,7 @@ let initRoutes = app => {
     "/login", 
     auth.checkLogout,
     passport.authenticate("local", {
-      successRedirect: "/test",
+      successRedirect: "/",
       failureRedirect: "/login-register",
       successFlash: true,
       failureFlash: true
@@ -54,12 +47,14 @@ let initRoutes = app => {
     "/auth/facebook/callback",
     auth.checkLogout,
     passport.authenticate("facebook", {
-      successRedirect: "/test",
+      successRedirect: "/",
       failureRedirect: "/login-register",
     })
   );
 
+  router.get("/", auth.checkLogin, home.index);
 
+  router.post("/contact/add-frirend", auth.checkLogin, contact.addFriend)
 
 
   return app.use("/", router);
