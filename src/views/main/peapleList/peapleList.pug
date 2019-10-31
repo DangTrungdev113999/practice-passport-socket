@@ -1,23 +1,23 @@
-#people-list.people-list.nav-tabs(role="tablist")
+#people-list.people-list
   .search
     input(type='text' placeholder='search')
     i.fa.fa-search
-  ul.list
+  ul.list.nav.nav-tabs
     if getAllFriend.length
       each user, index in getAllFriend
         if index === 0
-          li.clearfix
+          li.clearfix(data-toggle="tab" href=`#${user._id}`)
             img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg' alt='avatar')
             .about
-              a.name.active(data-toggle="tab" href=`#${user._id}` data-target=`#${user._id}` )=user.username
+              a.active.name(data-toggle="tab" href=`#${user._id}` data-uid=`${user._id}` data-target=`#${user._id}`)=user.username
               .status
                 i.fa.fa-circle.online
                 |  online
         else
-          li.clearfix
+          li.clearfix(data-toggle="tab" href=`#${user._id}`)
             img(src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/chat_avatar_01.jpg' alt='avatar')
             .about
-              a.name(data-toggle="tab" href=`#${user._id}` data-target=`#${user._id}` )=user.username
+              a.name(data-toggle="tab" href=`#${user._id}` data-uid=`${user._id}` data-target=`#${user._id}`)=user.username
               .status
                 i.fa.fa-circle.online
                 |  online
