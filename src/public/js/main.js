@@ -1,3 +1,5 @@
+const socket = io();
+
 function showSignupModal() {
   var $form_modal = $('.user-modal'),
     $form_login = $form_modal.find('#login'),
@@ -35,5 +37,5 @@ function showsigninModal() {
 }
 
 $(document).ready(function() {
-  
+
 })
