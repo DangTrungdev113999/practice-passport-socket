@@ -10,7 +10,7 @@ let initPassportLocal = () => {
       {
         usernameField: "email",
         passwordField: "password",
-        passReqToCallback: true
+        passReqToCallback: true,
       },
       async (req, email, password, done) => {
         try {
@@ -65,6 +65,7 @@ let initPassportLocal = () => {
   passport.deserializeUser( async (id, done) => {
     try {
       let user = await UserModel.findByIdForSessionToUse(id);
+      // console.log("deserializeUser")
       return done(null, user);
     } catch (error) {
       console.log(error);

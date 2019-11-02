@@ -1,7 +1,7 @@
 import express from "express";
 import passport from "passport";
 
-import { auth, home, contact } from "./../controllers/index";
+import { auth, home, contact, message } from "./../controllers/index";
 import { authValid } from "./../validation/index";
 import initPassportLocal from "./../controllers/passportControllers/local";
 import initPassportFacebook from "./../controllers/passportControllers/facebook";
@@ -54,7 +54,9 @@ let initRoutes = app => {
 
   router.get("/", auth.checkLogin, home.index);
 
-  router.post("/contact/add-frirend", auth.checkLogin, contact.addFriend)
+  router.post("/contact/add-frirend", auth.checkLogin, contact.addFriend);
+  
+  router.post("/chat-text", auth.checkLogin, message.chatText)
 
 
   return app.use("/", router);

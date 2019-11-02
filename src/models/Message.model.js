@@ -20,9 +20,16 @@ let MessageSchema = new Schema({
   text: String,
   file: { data: Buffer, contentType: String, fileName: String},
   createdAt: { type: Number, default: Date.now() },
-  updatedAt: { tyupe: Number, default: null },
+  updatedAt: { type: Number, default: null },
   deletedAt: { type: Number, default: null }
 })
+
+
+MessageSchema.statics = {
+  createNew(item) {
+    return this.create(item);
+  }
+}
 
 let Message = mongoose.model("message", MessageSchema);
 
