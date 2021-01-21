@@ -37,7 +37,7 @@
     "passport.socketio": "^3.7.0",
     "pem": "^1.14.3",
     "pug": "^2.0.4",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "uuidv4": "^5.0.1"
   },
   "devDependencies": {
